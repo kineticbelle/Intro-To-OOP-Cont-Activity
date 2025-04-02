@@ -36,7 +36,7 @@ def test_add_class():
     student = Student(name, grade, classes)
     class_to_add = student.add_class(new_class)
 
-    assert len(student.classes) == 6
+    assert len(student.classes) == 7
 
 def test_get_num_classes():
     name = "Kira" 
@@ -51,4 +51,18 @@ def test_get_num_classes():
     num_classes = student.get_num_classes()
 
     assert num_classes == 3
+
+def test_display_classes():
+    name = "Kira" 
+    grade = "freshman"
+    classes = [
+                    "Anthropology", 
+                    "Spanish", 
+                    "Biology"
+                ]
+    
+    student = Student(name, grade, classes)
+    display_classes = student.display_classes()
+
+    assert display_classes == "Anthropology, Spanish, Biology"
     
